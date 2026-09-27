@@ -111,7 +111,7 @@ export async function ingestChats(
  *  because we couldn't work out whether the cheaper form of it was available. */
 async function supportsAppend(client: HindsightClient): Promise<boolean> {
   try {
-    return await client.supportsIdempotentRetain();
+    return await client.supportsAppendRetain();
   } catch {
     return false;
   }
